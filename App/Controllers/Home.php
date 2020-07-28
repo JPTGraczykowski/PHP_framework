@@ -2,17 +2,18 @@
 
 namespace App\Controllers;
 
+use \Core\View;
+
+
 class Home extends \Core\Controller
 {
 
     protected function before()
     {
-        echo '(before) ';
     }
 
     protected function after()
     {
-        echo ' (after)';
     }
 
     /* 
@@ -22,7 +23,10 @@ class Home extends \Core\Controller
     */
     public function indexAction()
     {
-        echo "Hello in the idex action in the Home controller";
+        View::renderTemplate('Home/index.html', [ 
+                    'name' => 'Dave', 
+                    'colours' => ['red', 'green', 'blue']
+                    ]);
     }
 
     /* 
