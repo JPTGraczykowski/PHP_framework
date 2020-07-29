@@ -4,38 +4,51 @@ namespace App\Controllers;
 
 use \Core\View;
 
-
+/**
+ * Home controller
+ *
+ * PHP version 5.4
+ */
 class Home extends \Core\Controller
 {
 
+    /**
+     * Before filter
+     *
+     * @return void
+     */
     protected function before()
     {
+        //echo "(before) ";
+        //return false;
     }
 
+    /**
+     * After filter
+     *
+     * @return void
+     */
     protected function after()
     {
+        //echo " (after)";
     }
 
-    /* 
-    ahow the index page
-
-    @return void 
-    */
+    /**
+     * Show the index page
+     *
+     * @return void
+     */
     public function indexAction()
     {
-        View::renderTemplate('Home/index.html', [ 
-                    'name' => 'Dave', 
-                    'colours' => ['red', 'green', 'blue']
-                    ]);
-    }
-
-    /* 
-    how the new page
-
-    @return void 
-    */
-    public function addNewAction()
-    {
-        echo "Hello in the addNew action in the Home controller";
+        /*
+        View::render('Home/index.php', [
+            'name'    => 'Dave',
+            'colours' => ['red', 'green', 'blue']
+        ]);
+        */
+        View::renderTemplate('Home/index.html', [
+            'name'    => 'Dave',
+            'colours' => ['red', 'green', 'blue']
+        ]);
     }
 }
